@@ -1,16 +1,56 @@
-# React + Vite
+# XRate - 실시간 환율 앱
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+KRW 기준 실시간 환율 조회 및 계산기 앱
 
-Currently, two official plugins are available:
+## 기술 스택
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- React 19
+- Vite 7
+- CSS (CSS Variables, Flexbox, Grid)
 
-## React Compiler
+## 설치 방법
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+```bash
+# 저장소 클론
+git clone <repository-url>
+cd xrate
 
-## Expanding the ESLint configuration
+# 의존성 설치
+npm install
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 실행 방법
+
+```bash
+# 개발 서버 실행
+npm run dev
+```
+
+## 접속 경로
+
+개발 서버 실행 후 브라우저에서 접속:
+
+```
+http://localhost:5173
+```
+
+## 기타 스크립트
+
+```bash
+# 프로덕션 빌드
+npm run build
+
+# 빌드 결과물 미리보기
+npm run preview
+
+# ESLint 검사
+npm run lint
+```
+
+## 주요 기능
+
+- 실시간 환율 조회 (60초마다 자동 갱신)
+- 환율 계산기 (KRW ↔ 외화 양방향 변환)
+- 주요 통화 지원 (USD, JPY, EUR, CNY, GBP)
+- 환율 변동 표시 (상승/하락)
+- 다크모드 지원
