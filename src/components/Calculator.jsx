@@ -1,6 +1,13 @@
 import { useState, useEffect } from 'react';
 import { formatNumber } from '../utils/api';
 
+const formatDisplay = (value) => {
+  if (!value) return '';
+  const parts = value.split('.');
+  parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+  return parts.join('.');
+};
+
 const Calculator = ({ selectedCurrency, convertKRWToForeign, convertForeignToKRW, rate }) => {
   const [krwAmount, setKrwAmount] = useState('');
   const [foreignAmount, setForeignAmount] = useState('');
@@ -73,7 +80,7 @@ const Calculator = ({ selectedCurrency, convertKRWToForeign, convertForeignToKRW
             <span className="input-prefix">₩</span>
             <input
               type="text"
-              value={krwAmount}
+              value={formatDisplay(krwAmount)}
               onChange={handleKRWChange}
               placeholder="0"
             />
@@ -86,7 +93,7 @@ const Calculator = ({ selectedCurrency, convertKRWToForeign, convertForeignToKRW
             <span className="input-prefix">{selectedCurrency.symbol}</span>
             <input
               type="text"
-              value={foreignAmount}
+              value={formatDisplay(foreignAmount)}
               onChange={handleForeignChange}
               placeholder="0"
             />
