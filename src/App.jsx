@@ -82,7 +82,8 @@ function App() {
       </main>
 
       <footer className="app-footer">
-        <p>KRW 기준 환율 | 데이터 제공: ExchangeRate-API</p>
+        <span className="footer-left">KRW 기준 환율</span>
+        <span className="footer-right">Developed by KT KIM 💻</span>
       </footer>
     </div>
   );
